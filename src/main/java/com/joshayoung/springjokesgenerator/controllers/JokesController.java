@@ -11,14 +11,15 @@ import java.util.Locale;
 public class JokesController {
     private final ChuckQuotes chuckQuotes;
 
+    // Dependency Injection:
     public JokesController(ChuckQuotes chuckQuotes) {
         this.chuckQuotes = chuckQuotes;
     }
 
-    @RequestMapping("/")
+    @RequestMapping({"/", ""})
     public String getJoke(Model model) {
         String quote = this.chuckQuotes.getJoke();
         model.addAttribute("jokes", quote);
-        return "test";
+        return "index";
     }
 }
