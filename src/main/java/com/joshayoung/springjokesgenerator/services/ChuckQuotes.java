@@ -1,17 +1,17 @@
 package com.joshayoung.springjokesgenerator.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ChuckQuotes {
-    public final ChuckNorrisQuotes chuckNorrisQuotes;
+
+    public final ChuckNorrisQuotes quotes;
 
     @Autowired
-    public ChuckQuotes(ChuckNorrisQuotes chuckNorrisQuotes) {
-        this.chuckNorrisQuotes = chuckNorrisQuotes;
+    public ChuckQuotes(ChuckNorrisQuotes quotes) {
+        this.quotes = quotes;
     }
 
     public String getJoke() {
